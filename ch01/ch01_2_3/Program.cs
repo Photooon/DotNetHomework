@@ -18,21 +18,19 @@ namespace ch01_2_3
         {
             List<int> primeNum = new List<int>();
             bool[] isPrime = new bool[upper + 1];       // 表示从0->upper是否为素数
-            for (int i = 0; i < upper - 1; i++)
+            for (int i = 2; i < upper - 1; i++)
             {
                 isPrime[i] = true;
             }
-            isPrime[0] = isPrime[1] = false;
 
             for (int i = 2; i < upper + 1; i++)
             {
-                if (isPrime[i])
+                if (!isPrime[i]) { continue; }
+
+                primeNum.Add(i);
+                for (int j = 2 * i; j < upper + 1; j += i)     // 除去倍数
                 {
-                    primeNum.Add(i);
-                    for (int j = 2 * i; j < upper + 1; j += i)     // 除去倍数
-                    {
-                        isPrime[j] = false;
-                    }
+                    isPrime[j] = false;
                 }
             }
 

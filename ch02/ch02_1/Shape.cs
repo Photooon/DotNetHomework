@@ -44,9 +44,10 @@ namespace ch02_1.Shapes
         {
             get
             {
+                if (!this.Legal) { return -1; }
+
                 return Length * Width;
             }
-
         }
 
         public Rectangle(double Length, double Width)
@@ -68,7 +69,7 @@ namespace ch02_1.Shapes
         }
 
         public Square() : base()
-        {
+        {  
             this.Width = this.Length;
         }
 
@@ -103,6 +104,8 @@ namespace ch02_1.Shapes
         {
             get
             {
+                if (!this.Legal) { return -1; }
+
                 double p = (Side1 + Side2 + Side3) / 2;
                 return Math.Sqrt(p * (p - Side1) * (p - Side2) * (p - Side3));      // 海伦公式
             }

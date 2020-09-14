@@ -19,8 +19,7 @@ namespace ch01_2_2
                 }
 
                 Statistic(numList.ToArray(), out int maxNum, out int minNum, out float meanNum, out int sum);
-                Console.WriteLine(string.Format("MaxNum: {0}\tMinNum: {1}\tMeanNum: {2}\tSum: {3}",
-                    maxNum, minNum, meanNum, sum));
+                Console.WriteLine($"MaxNum: {maxNum}\tMinNum: {minNum}\tMeanNum: {meanNum}\tSum: {sum}");
             }
             catch (Exception e)
             {
@@ -43,7 +42,7 @@ namespace ch01_2_2
                 {
                     minNum = numList[i];
                 }
-                sum += numList[0];
+                sum += numList[i];
             }
             meanNum = (float)sum / numList.Length;
         }

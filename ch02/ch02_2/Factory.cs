@@ -16,10 +16,26 @@ namespace ch02_2.BeanFactory
 
     class Factory
     {
+        private Random random = new Random();
+
+        public Shape GetShape(ShapeType shapeType)
+        {
+            switch (shapeType)
+            {
+                case ShapeType.Rectangle:
+                    return new Rectangle();
+                case ShapeType.Squre:
+                    return new Square();
+                case ShapeType.Triangle:
+                    return new Triangle();
+                default:
+                    return null;
+            }
+        }
+
         public Shape GetRandomShape()
         {
             ShapeType[] shapeTypes = Enum.GetValues(typeof(ShapeType)) as ShapeType[];
-            Random random = new Random();
             ShapeType shapeType = shapeTypes[random.Next(0, shapeTypes.Length)];
             switch (shapeType)
             {

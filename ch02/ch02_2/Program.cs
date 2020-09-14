@@ -19,6 +19,7 @@ namespace ch02_2.Main
             {
                 shapeList.Add(factory.GetRandomShape());
             }
+            shapeList.Add(factory.GetShape(ShapeType.Triangle));
 
             double sum = 0;
             shapeList.ForEach(s => sum += s.Area);

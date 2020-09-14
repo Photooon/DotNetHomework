@@ -11,38 +11,28 @@ namespace ch01_1_2
             int num = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Prime Factors:");
-            List<int> primeFactors = GetPrimeNumDivisor(num);
+            List<int> primeFactors = GetPrimeFactor(num);
             primeFactors.ForEach(f => Console.WriteLine(f));
         }
 
-        static List<int> GetPrimeNumDivisor(int num)
+        static List<int> GetPrimeFactor(int num)
         {
             List<int> primeFactors = new List<int>();
 
-            for (int i = 2; i <= num; i++)
+            for (int factor = 2; factor * factor <= num; factor++)  // 因式分解法
             {
-                if (num % i == 0 && IsPrimeNum(i))
+                while(num % factor == 0)
                 {
-                    primeFactors.Add(i);
+                    primeFactors.Add(factor);
+                    num /= factor;
                 }
+            }
+            if (num != 1)
+            {
+                primeFactors.Add(num);
             }
 
             return primeFactors;
-        }
-
-        static bool IsPrimeNum(int num)
-        {
-            bool isPrimeNum = true;
-            for(int i = 2; i * i <= num; i++)
-            {
-                if (num % i == 0)
-                {
-                    isPrimeNum = false;
-                    break;
-                }
-            }
-
-            return isPrimeNum;
         }
     }
 }

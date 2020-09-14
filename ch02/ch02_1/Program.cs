@@ -11,7 +11,7 @@ namespace ch02_1
     {
         static void Main(string[] args)
         {
-            Rectangle rect = new Rectangle(10, 5);
+            Rectangle rect = new Rectangle(-10, -5);
             Console.WriteLine(rect.Legal);
             Console.WriteLine(rect.Area);
 

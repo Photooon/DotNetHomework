@@ -11,22 +11,12 @@ namespace ch02_4
         static void Main(string[] args)
         {
             Clock clock = new Clock();
-            clock.Alarm += Alarmed;
-            clock.Tick += ClockTick;
-            clock.CheckPoint = 5;      // 设定倒计时：15秒
+            clock.Alarm += (S, E) => { Console.WriteLine("Alarmed!"); };
+            clock.Tick += (S, E) => { Console.WriteLine($"Time: {E.checkPoint}"); };
+            clock.CheckPoint = 5;      // 设定倒计时：5秒
             clock.Start();
 
             Console.Read();
-        }
-
-        static private void ClockTick(TickEventArg tickEventArg)
-        {
-            Console.WriteLine($"Time: {tickEventArg.checkpoint}");
-        }
-
-        static private void Alarmed()
-        {
-            Console.WriteLine("Clock alarmed!");
         }
     }
 }

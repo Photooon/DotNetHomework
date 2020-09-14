@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace ch02_4
 {
-    public delegate void TickEventHandler(TickEventArg tickEventArg);
-    public delegate void AlarmEventHandler();
+    public delegate void TickEventHandler(object sender, TickEventArg tickEventArg);
+    public delegate void AlarmEventHandler(object sender, EventArgs eventArgs);
 
-    public class TickEventArg
+    public class TickEventArg : EventArgs
     {
-        public int checkpoint;
+        public int checkPoint;
 
         public TickEventArg(int checkPoint)
         {
-            this.checkpoint = checkPoint;
+            this.checkPoint = checkPoint;
         }
     }
 
@@ -54,14 +54,19 @@ namespace ch02_4
             timer.Start();
         }
 
+        public void Close()
+        {
+            timer.Stop();
+        }
+
         private void Check(object sender, System.Timers.ElapsedEventArgs e)
         {
             checkCount += 1;
-            Tick(new TickEventArg(checkCount));
+            Tick(this, new TickEventArg(checkCount));
             if (checkCount == checkPoint)
             {
-                Alarm();
-                checkCount = 0;
+                Alarm(this, new EventArgs());
+                checkPoint = -1;
             }
         }
     }

@@ -5,6 +5,10 @@ ch01/ch01_2_1/bin/
 ch01/ch01_2_2/bin/
 ch01/ch01_2_3/bin/
 ch01/ch01_2_4/bin/
+ch02/ch02_1/bin/
+ch02/ch02_2/bin/
+ch02/ch02_3/bin/
+ch02/ch02_4/bin/
 
 # obj directory
 ch01/ch01_1_1/obj/
@@ -13,3 +17,7 @@ ch01/ch01_2_1/obj/
 ch01/ch01_2_2/obj/
 ch01/ch01_2_3/obj/
 ch01/ch01_2_4/obj/
+ch02/ch02_1/obj/
+ch02/ch02_2/obj/
+ch02/ch02_3/obj/
+ch02/ch02_4/obj/

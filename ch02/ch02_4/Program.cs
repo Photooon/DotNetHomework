@@ -10,9 +10,9 @@ namespace ch02_4
     {
         static void Main(string[] args)
         {
-            Clock clock = new Clock();
+            Clock clock = new Clock();  // 带倒计时功能的时钟
             clock.Alarm += (S, E) => { Console.WriteLine("Alarmed!"); };
-            clock.Tick += (S, E) => { Console.WriteLine($"Time: {E.checkPoint}"); };
+            clock.Tick += (S, E) => { Console.WriteLine($"Time: {DateTime.Now:hh:mm:ss}"); };
             clock.CheckPoint = 5;      // 设定倒计时：5秒
             clock.Start();
 

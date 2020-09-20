@@ -49,7 +49,7 @@ namespace ch02_3.GenericList
             }
         }
 
-        public void ForEach(Action<T> action)
+        public void ForEach(Action<T> action)       // 新添加的方法
         {
             Node<T> point = head;
             while(point != null)

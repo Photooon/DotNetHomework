@@ -16,7 +16,7 @@ namespace ch02_2.BeanFactory
 
     class Factory
     {
-        private Random random = new Random();
+        private Random random = new Random();           // 避免Random在循环中生成
 
         public Shape GetShape(ShapeType shapeType)
         {

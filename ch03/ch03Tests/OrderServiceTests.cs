@@ -357,6 +357,7 @@ namespace ch03.Tests
             {
                 orderService.Export("./orders.xml");
                 assertFlag = true;
+                File.Delete("./orders.xml");    // 用完删除，不影响下一次测试
             }
             catch (Exception) { }
 
@@ -368,10 +369,12 @@ namespace ch03.Tests
         {
             bool assertFlag = false;
 
-            orderService.Export("./orders.xml");    //先导出再导入
+            orderService.Export("./orders.xml");    // 先导出再导入
 
             OrderService os = new OrderService();
             os.Import("./orders.xml");
+
+            File.Delete("./orders.xml");
 
             var orders = os.SelectAll();
             if (orders.Count() != 0)

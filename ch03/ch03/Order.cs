@@ -23,13 +23,7 @@ namespace ch03
 
         private List<OrderDetail> orderDetails;     // 为了保证订单明细不重复，这里将orderDetails作为私有成员，并提供添加订单明细方法
 
-        public List<OrderDetail> OrderDetails
-        {
-            get
-            {
-                return orderDetails;
-            }
-        }
+        public List<OrderDetail> OrderDetails => orderDetails;
 
         public Order()
         {

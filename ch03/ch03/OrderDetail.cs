@@ -13,13 +13,7 @@ namespace ch03
         public int Count { get; set; }
         public float Discount { get; set; }
 
-        public double Money
-        {
-            get
-            {
-                return Commodity.Price * Count * Discount;
-            }
-        }
+        public double Money => Commodity.Price * Count * Discount;
 
         public OrderDetail()
         {

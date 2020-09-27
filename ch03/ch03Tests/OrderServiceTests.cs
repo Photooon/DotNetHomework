@@ -368,6 +368,8 @@ namespace ch03.Tests
         {
             bool assertFlag = false;
 
+            orderService.Export("./orders.xml");    //先导出再导入
+
             OrderService os = new OrderService();
             os.Import("./orders.xml");
 

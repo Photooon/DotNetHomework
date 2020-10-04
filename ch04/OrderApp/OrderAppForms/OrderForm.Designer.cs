@@ -40,11 +40,11 @@
             this.IdLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.detailDataGridView = new System.Windows.Forms.DataGridView();
+            this.detailGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commodityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detailGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailDataGridView)).BeginInit();
@@ -164,6 +164,10 @@
             this.detailDataGridView.Size = new System.Drawing.Size(628, 515);
             this.detailDataGridView.TabIndex = 0;
             // 
+            // detailGridBindingSource
+            // 
+            this.detailGridBindingSource.DataSource = typeof(OrderAppForms.OrderDetailGrid);
+            // 
             // commodityNameDataGridViewTextBoxColumn
             // 
             this.commodityNameDataGridViewTextBoxColumn.DataPropertyName = "CommodityName";
@@ -178,7 +182,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
+            this.priceDataGridViewTextBoxColumn.Width = 70;
             // 
             // countDataGridViewTextBoxColumn
             // 
@@ -186,7 +190,7 @@
             this.countDataGridViewTextBoxColumn.HeaderText = "Count";
             this.countDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.Width = 125;
+            this.countDataGridViewTextBoxColumn.Width = 70;
             // 
             // discountDataGridViewTextBoxColumn
             // 
@@ -194,11 +198,6 @@
             this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
             this.discountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            this.discountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // detailGridBindingSource
-            // 
-            this.detailGridBindingSource.DataSource = typeof(OrderAppForms.OrderDetailGrid);
             // 
             // OrderForm
             // 
@@ -232,10 +231,10 @@
         private System.Windows.Forms.Label cusAgeLabel;
         private System.Windows.Forms.TextBox cusNameTextBox;
         private System.Windows.Forms.Label cusNameLabel;
+        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn commodityNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button closeButton;
     }
 }

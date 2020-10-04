@@ -64,8 +64,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 201);
+            this.panel1.Size = new System.Drawing.Size(460, 163);
             this.panel1.TabIndex = 0;
             // 
             // searchTabControl
@@ -77,9 +78,10 @@
             this.searchTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchTabControl.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.searchTabControl.Location = new System.Drawing.Point(0, 0);
+            this.searchTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchTabControl.Name = "searchTabControl";
             this.searchTabControl.SelectedIndex = 0;
-            this.searchTabControl.Size = new System.Drawing.Size(463, 201);
+            this.searchTabControl.Size = new System.Drawing.Size(460, 163);
             this.searchTabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -88,18 +90,21 @@
             this.tabPage1.Controls.Add(this.IdTextBox);
             this.tabPage1.Controls.Add(this.IdLabel);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(455, 165);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(452, 127);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ID";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // IdConfirmButton
             // 
-            this.IdConfirmButton.Location = new System.Drawing.Point(314, 55);
+            this.IdConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IdConfirmButton.Location = new System.Drawing.Point(321, 37);
+            this.IdConfirmButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IdConfirmButton.Name = "IdConfirmButton";
-            this.IdConfirmButton.Size = new System.Drawing.Size(106, 48);
+            this.IdConfirmButton.Size = new System.Drawing.Size(100, 50);
             this.IdConfirmButton.TabIndex = 2;
             this.IdConfirmButton.Text = "Confirm";
             this.IdConfirmButton.UseVisualStyleBackColor = true;
@@ -107,15 +112,18 @@
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(73, 65);
+            this.IdTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IdTextBox.Location = new System.Drawing.Point(88, 47);
+            this.IdTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IdTextBox.Name = "IdTextBox";
-            this.IdTextBox.Size = new System.Drawing.Size(190, 29);
+            this.IdTextBox.Size = new System.Drawing.Size(200, 29);
             this.IdTextBox.TabIndex = 1;
             // 
             // IdLabel
             // 
+            this.IdLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.IdLabel.AutoSize = true;
-            this.IdLabel.Location = new System.Drawing.Point(35, 68);
+            this.IdLabel.Location = new System.Drawing.Point(50, 50);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(32, 23);
             this.IdLabel.TabIndex = 0;
@@ -127,18 +135,20 @@
             this.tabPage2.Controls.Add(this.comNameTextBox);
             this.tabPage2.Controls.Add(this.comLabel);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(455, 165);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(452, 127);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Commodity";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // comConfirmButton
             // 
-            this.comConfirmButton.Location = new System.Drawing.Point(314, 57);
+            this.comConfirmButton.Location = new System.Drawing.Point(321, 37);
+            this.comConfirmButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comConfirmButton.Name = "comConfirmButton";
-            this.comConfirmButton.Size = new System.Drawing.Size(106, 48);
+            this.comConfirmButton.Size = new System.Drawing.Size(100, 50);
             this.comConfirmButton.TabIndex = 5;
             this.comConfirmButton.Text = "Confirm";
             this.comConfirmButton.UseVisualStyleBackColor = true;
@@ -146,15 +156,16 @@
             // 
             // comNameTextBox
             // 
-            this.comNameTextBox.Location = new System.Drawing.Point(88, 67);
+            this.comNameTextBox.Location = new System.Drawing.Point(88, 47);
+            this.comNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comNameTextBox.Name = "comNameTextBox";
-            this.comNameTextBox.Size = new System.Drawing.Size(181, 29);
+            this.comNameTextBox.Size = new System.Drawing.Size(200, 29);
             this.comNameTextBox.TabIndex = 4;
             // 
             // comLabel
             // 
             this.comLabel.AutoSize = true;
-            this.comLabel.Location = new System.Drawing.Point(19, 70);
+            this.comLabel.Location = new System.Drawing.Point(19, 49);
             this.comLabel.Name = "comLabel";
             this.comLabel.Size = new System.Drawing.Size(63, 23);
             this.comLabel.TabIndex = 3;
@@ -168,23 +179,25 @@
             this.tabPage3.Controls.Add(this.cusNameTextBox);
             this.tabPage3.Controls.Add(this.cusNameLabel);
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(455, 165);
+            this.tabPage3.Size = new System.Drawing.Size(452, 127);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Customer";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // cusAgeTextBox
             // 
-            this.cusAgeTextBox.Location = new System.Drawing.Point(96, 87);
+            this.cusAgeTextBox.Location = new System.Drawing.Point(88, 76);
+            this.cusAgeTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cusAgeTextBox.Name = "cusAgeTextBox";
-            this.cusAgeTextBox.Size = new System.Drawing.Size(181, 29);
+            this.cusAgeTextBox.Size = new System.Drawing.Size(203, 29);
             this.cusAgeTextBox.TabIndex = 10;
             // 
             // ageLabel
             // 
             this.ageLabel.AutoSize = true;
-            this.ageLabel.Location = new System.Drawing.Point(43, 90);
+            this.ageLabel.Location = new System.Drawing.Point(35, 76);
             this.ageLabel.Name = "ageLabel";
             this.ageLabel.Size = new System.Drawing.Size(47, 23);
             this.ageLabel.TabIndex = 9;
@@ -192,9 +205,10 @@
             // 
             // cusConfirmButton
             // 
-            this.cusConfirmButton.Location = new System.Drawing.Point(322, 58);
+            this.cusConfirmButton.Location = new System.Drawing.Point(321, 37);
+            this.cusConfirmButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cusConfirmButton.Name = "cusConfirmButton";
-            this.cusConfirmButton.Size = new System.Drawing.Size(106, 48);
+            this.cusConfirmButton.Size = new System.Drawing.Size(100, 50);
             this.cusConfirmButton.TabIndex = 8;
             this.cusConfirmButton.Text = "Confirm";
             this.cusConfirmButton.UseVisualStyleBackColor = true;
@@ -202,15 +216,16 @@
             // 
             // cusNameTextBox
             // 
-            this.cusNameTextBox.Location = new System.Drawing.Point(96, 39);
+            this.cusNameTextBox.Location = new System.Drawing.Point(88, 23);
+            this.cusNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cusNameTextBox.Name = "cusNameTextBox";
-            this.cusNameTextBox.Size = new System.Drawing.Size(181, 29);
+            this.cusNameTextBox.Size = new System.Drawing.Size(203, 29);
             this.cusNameTextBox.TabIndex = 7;
             // 
             // cusNameLabel
             // 
             this.cusNameLabel.AutoSize = true;
-            this.cusNameLabel.Location = new System.Drawing.Point(27, 42);
+            this.cusNameLabel.Location = new System.Drawing.Point(19, 26);
             this.cusNameLabel.Name = "cusNameLabel";
             this.cusNameLabel.Size = new System.Drawing.Size(63, 23);
             this.cusNameLabel.TabIndex = 6;
@@ -224,23 +239,25 @@
             this.tabPage4.Controls.Add(this.upperTextBox);
             this.tabPage4.Controls.Add(this.upperLabel);
             this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(455, 165);
+            this.tabPage4.Size = new System.Drawing.Size(452, 127);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Money";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // lowerTextBox
             // 
-            this.lowerTextBox.Location = new System.Drawing.Point(96, 92);
+            this.lowerTextBox.Location = new System.Drawing.Point(88, 76);
+            this.lowerTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lowerTextBox.Name = "lowerTextBox";
-            this.lowerTextBox.Size = new System.Drawing.Size(181, 29);
+            this.lowerTextBox.Size = new System.Drawing.Size(203, 29);
             this.lowerTextBox.TabIndex = 15;
             // 
             // lowerLabel
             // 
             this.lowerLabel.AutoSize = true;
-            this.lowerLabel.Location = new System.Drawing.Point(29, 95);
+            this.lowerLabel.Location = new System.Drawing.Point(19, 76);
             this.lowerLabel.Name = "lowerLabel";
             this.lowerLabel.Size = new System.Drawing.Size(63, 23);
             this.lowerLabel.TabIndex = 14;
@@ -248,9 +265,10 @@
             // 
             // moneyConfirmButton
             // 
-            this.moneyConfirmButton.Location = new System.Drawing.Point(322, 63);
+            this.moneyConfirmButton.Location = new System.Drawing.Point(321, 37);
+            this.moneyConfirmButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.moneyConfirmButton.Name = "moneyConfirmButton";
-            this.moneyConfirmButton.Size = new System.Drawing.Size(106, 48);
+            this.moneyConfirmButton.Size = new System.Drawing.Size(100, 50);
             this.moneyConfirmButton.TabIndex = 13;
             this.moneyConfirmButton.Text = "Confirm";
             this.moneyConfirmButton.UseVisualStyleBackColor = true;
@@ -258,15 +276,16 @@
             // 
             // upperTextBox
             // 
-            this.upperTextBox.Location = new System.Drawing.Point(96, 44);
+            this.upperTextBox.Location = new System.Drawing.Point(88, 23);
+            this.upperTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.upperTextBox.Name = "upperTextBox";
-            this.upperTextBox.Size = new System.Drawing.Size(181, 29);
+            this.upperTextBox.Size = new System.Drawing.Size(203, 29);
             this.upperTextBox.TabIndex = 12;
             // 
             // upperLabel
             // 
             this.upperLabel.AutoSize = true;
-            this.upperLabel.Location = new System.Drawing.Point(27, 47);
+            this.upperLabel.Location = new System.Drawing.Point(17, 26);
             this.upperLabel.Name = "upperLabel";
             this.upperLabel.Size = new System.Drawing.Size(65, 23);
             this.upperLabel.TabIndex = 11;
@@ -274,10 +293,13 @@
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 201);
+            this.ClientSize = new System.Drawing.Size(460, 163);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchForm";
             this.Text = "Search";
             this.panel1.ResumeLayout(false);

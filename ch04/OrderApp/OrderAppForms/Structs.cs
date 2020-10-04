@@ -61,6 +61,8 @@ namespace OrderAppForms
 
             foreach (OrderDetail od in orderDetails)
             {
+                if (od == null) break;
+
                 OrderDetailGrid orderDetailGrid = new OrderDetailGrid()
                 {
                     CommodityName = od.Commodity.Name,
@@ -81,6 +83,8 @@ namespace OrderAppForms
 
             foreach (OrderDetailGrid detailGrid in orderDetailGrids)
             {
+                if (detailGrid == null) break;
+
                 Commodity commodity = new Commodity
                 {
                     Name = detailGrid.CommodityName,

@@ -19,59 +19,27 @@ namespace ch03
 
         public void AddOrder(Order newOrder)
         {
-            foreach (var o in this.orders)
+            if (orders.Contains(newOrder))      // 由于Order类实现了Equals方法，所以可以用Contain方法查询
             {
-                if (newOrder.Id == o.Id)
-                {
-                    throw new Exception("订单添加错误，已存在相同订单号的订单");
-                }
+                throw new Exception("订单添加错误，已存在相同订单号的订单");
             }
             orders.Add(newOrder);
         }
 
         public void DeleteOrder(int id)
         {
-            int i;
-            bool existFlag = false;
-            for (i = 0; i < orders.Count; i++)
-            {
-                if (orders[i].Id == id)
-                {
-                    orders.RemoveAt(i);     // 删除对应id的订单
-                    existFlag = true;       // 对应id的订单存在
-                    break;
-                }
-            }
-            if (!existFlag)
-            {
-                throw new ArgumentException("订单删除错误，不存在指定Id的订单");
-            }
+            orders.RemoveAll(o => o.Id == id);
         }
 
-        public void ModifyOrder(Order order)
+        public void UpdateOrder(Order order)
         {
-            int i;
-            for (i = 0; i < orders.Count; i++)
-            {
-                if (orders[i].Id == order.Id)
-                {
-                    orders[i] = order;      // 替换掉原来的订单
-                    break;
-                }
-            }
-            if (i == orders.Count)
-            {
-                throw new ArgumentException("订单修改错误，不存在指定的订单");
-            }
+            DeleteOrder(order.Id);
+            AddOrder(order);
         }
 
-        public IEnumerable<Order> SearchWithId(int Id)
+        public Order SearchWithId(int Id)
         {
-            var q = from o in orders
-                    where o.Id == Id
-                    orderby o.Money descending
-                    select o;
-            return q;
+            return orders.FirstOrDefault(o => o.Id == Id);
         }
 
         public IEnumerable<Order> SearchWithName(string Name)
@@ -132,6 +100,11 @@ namespace ch03
 
         public void Export(string path)
         {
+            if (Path.GetExtension(path) != ".xml")
+            {
+                throw new ArgumentException($"{path} is not a xml file!");
+            }
+
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Order>));
             using(FileStream fs = new FileStream(path, FileMode.Create))
             {
@@ -141,6 +114,16 @@ namespace ch03
 
         public void Import(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new ArgumentException($"{path} does not exist!");
+            }
+
+            if (Path.GetExtension(path) != ".xml")
+            {
+                throw new ArgumentException($"{path} is not a xml file!");
+            }
+
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Order>));
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {

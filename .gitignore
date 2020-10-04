@@ -11,6 +11,10 @@ ch02/ch02_3/bin/
 ch02/ch02_4/bin/
 ch03/ch03/bin/
 ch03/ch03Tests/bin/
+ch04/CayleyTree/CayleyTree/bin/
+ch04/OrderApp/OrderApp/bin/
+ch04/OrderApp/OrderAppForms/bin/
+ch04/OrderApp/OrderAppTests/bin/
 
 # obj directory
 ch01/ch01_1_1/obj/
@@ -25,3 +29,7 @@ ch02/ch02_3/obj/
 ch02/ch02_4/obj/
 ch03/ch03/obj/
 ch03/ch03Tests/obj/
+ch04/CayleyTree/CayleyTree/obj/
+ch04/OrderApp/OrderApp/obj/
+ch04/OrderApp/OrderAppForms/obj/
+ch04/OrderApp/OrderAppTests/obj/

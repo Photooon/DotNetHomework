@@ -73,6 +73,7 @@ namespace ch03.Tests
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(Exception))]
         public void AddWrongOrderTest()
         {
             Order order = new Order         // 订单号与已有订单重复，是错误的订单
@@ -81,18 +82,7 @@ namespace ch03.Tests
                 Customer = tim
             };
             order.AddOrderDetail(od4);
-
-            bool assertFlag = false;
-            try
-            {
-                orderService.AddOrder(order);
-            }
-            catch (Exception)               // 只有发生意外才是正确的
-            {
-                assertFlag = true;
-            }
-
-            Assert.IsTrue(assertFlag);
+            orderService.AddOrder(order);
         }
 
         [TestMethod()]
@@ -113,32 +103,22 @@ namespace ch03.Tests
         [TestMethod()]
         public void DeleteInexistingOrderTest()
         {
-            bool assertFlag = false;
-
-            try
-            {
-                orderService.DeleteOrder(3);        // 删除order3，由于没有添加，会抛出异常
-            }
-            catch (Exception)
-            {
-                assertFlag = true;
-            }
-
-            Assert.IsTrue(assertFlag);
+            orderService.DeleteOrder(3);
+            Assert.AreEqual(orderService.SelectAll().Count(), 2);
         }
 
         [TestMethod()]
-        public void ModifyExistingOrderTest()
+        public void UpdateExistingOrderTest()
         {
             bool assertFlag = false;
 
             james.Age = 41;
-            Order order = orderService.SearchWithId(1).First();      //将订单找出来之后进行修改
+            Order order = orderService.SearchWithId(1);      //将订单找出来之后进行修改
             order.Customer = james;
-            orderService.ModifyOrder(order);
+            orderService.UpdateOrder(order);
 
             var orderNamedJames = orderService.SearchWithId(1);
-            if (orderNamedJames.Count() != 0)
+            if (orderNamedJames != null)
             {
                 assertFlag = true;
             }
@@ -147,10 +127,8 @@ namespace ch03.Tests
         }
 
         [TestMethod()]
-        public void ModifyInexistingOrderTest()
+        public void UpdateInexistingOrderTest()
         {
-            bool assertFlag = false;
-
             Order order = new Order         // 订单号与已有订单重复，是错误的订单
             {
                 Id = 3,
@@ -158,47 +136,26 @@ namespace ch03.Tests
             };
             order.AddOrderDetail(od4);
 
-            try
-            {
-                orderService.ModifyOrder(order);       // 修改一个不存在的order
-            }
-            catch (Exception)
-            {
-                assertFlag = true;
-            }
-
-            Assert.IsTrue(assertFlag);
+            orderService.UpdateOrder(order);       // 修改一个不存在的order
+            Assert.AreEqual(orderService.SelectAll().Count(), 3);
+            Assert.IsNotNull(orderService.SearchWithId(3));
         }
 
         [TestMethod()]
         public void SearchWithIdTest()
         {
-            bool assertFlag = false;
-
             var order1 = orderService.SearchWithId(1);
             var order2 = orderService.SearchWithId(2);
-            
-            if (order1.Count() != 0 && order2.Count() != 0)
-            {
-                assertFlag = true;
-            }
 
-            Assert.IsTrue(assertFlag);
+            Assert.IsNotNull(order1);
+            Assert.IsNotNull(order2);
         }
 
         [TestMethod()]
         public void SearchWithInexistingIdTest()
         {
-            bool assertFlag = false;
-
             var order3 = orderService.SearchWithId(3);
-
-            if (order3.Count() == 0)
-            {
-                assertFlag = true;
-            }
-
-            Assert.IsTrue(assertFlag);
+            Assert.IsNull(order3);
         }
 
         [TestMethod()]
@@ -365,6 +322,13 @@ namespace ch03.Tests
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ExportToWrongPathTest()
+        {
+            orderService.Export("./orders.txt");
+        }
+
+        [TestMethod()]
         public void ImportFromCorrectPathTest()
         {
             bool assertFlag = false;
@@ -386,22 +350,11 @@ namespace ch03.Tests
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
         public void ImportFromWrongPathTest()
         {
-            bool assertFlag = false;
-
             OrderService os = new OrderService();
-
-            try
-            {
-                os.Import("./non-orders.xml");
-            }
-            catch (Exception)
-            {
-                assertFlag = true;
-            }
-
-            Assert.IsTrue(assertFlag);
+            os.Import("./non-orders.xml");
         }
     }
 }

@@ -34,9 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.stopBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.stopBtn = new System.Windows.Forms.Button();
+            this.maxNumTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -44,11 +46,12 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(16, 78);
+            this.outputTextBox.Location = new System.Drawing.Point(16, 112);
             this.outputTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(626, 399);
+            this.outputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.outputTextBox.Size = new System.Drawing.Size(626, 365);
             this.outputTextBox.TabIndex = 0;
             // 
             // startBtn
@@ -64,7 +67,7 @@
             // 
             // initUrlTextBox
             // 
-            this.initUrlTextBox.Location = new System.Drawing.Point(104, 6);
+            this.initUrlTextBox.Location = new System.Drawing.Point(113, 6);
             this.initUrlTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.initUrlTextBox.Name = "initUrlTextBox";
             this.initUrlTextBox.Size = new System.Drawing.Size(529, 29);
@@ -83,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 50);
+            this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 4;
@@ -99,6 +102,17 @@
             this.panel1.Size = new System.Drawing.Size(135, 489);
             this.panel1.TabIndex = 6;
             // 
+            // stopBtn
+            // 
+            this.stopBtn.Location = new System.Drawing.Point(19, 88);
+            this.stopBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.stopBtn.Name = "stopBtn";
+            this.stopBtn.Size = new System.Drawing.Size(93, 36);
+            this.stopBtn.TabIndex = 2;
+            this.stopBtn.Text = "停止爬取";
+            this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -111,24 +125,33 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.maxNumTextBox);
             this.panel3.Controls.Add(this.initUrlTextBox);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(648, 47);
+            this.panel3.Size = new System.Drawing.Size(648, 81);
             this.panel3.TabIndex = 8;
             // 
-            // stopBtn
+            // maxNumTextBox
             // 
-            this.stopBtn.Location = new System.Drawing.Point(19, 88);
-            this.stopBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.stopBtn.Name = "stopBtn";
-            this.stopBtn.Size = new System.Drawing.Size(93, 36);
-            this.stopBtn.TabIndex = 2;
-            this.stopBtn.Text = "停止爬取";
-            this.stopBtn.UseVisualStyleBackColor = true;
-            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
+            this.maxNumTextBox.Location = new System.Drawing.Point(113, 45);
+            this.maxNumTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.maxNumTextBox.Name = "maxNumTextBox";
+            this.maxNumTextBox.Size = new System.Drawing.Size(107, 29);
+            this.maxNumTextBox.TabIndex = 4;
+            this.maxNumTextBox.Text = "20";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "总网页数：";
             // 
             // CrawlForm
             // 
@@ -162,6 +185,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button stopBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox maxNumTextBox;
     }
 }
 

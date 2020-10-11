@@ -65,7 +65,8 @@ namespace CrawlForm
                     }
                 }
 
-                Task task = Task.Run(() => Process(url, tasks.Count));
+                int index = tasks.Count + 1;
+                Task task = Task.Run(() => Process(url, index));
                 tasks.Add(task);
             }
 
@@ -120,11 +121,11 @@ namespace CrawlForm
 
                 newUrl = TransUrl(newUrl, url);                     // 修正相对地址
 
-                if (urls[newUrl] == null)
+                if (urls[newUrl] == null)                           // 未爬取过时记录一下并加入等待队列
                 {
                     urls[newUrl] = false;
+                    waitingUrls.Enqueue(newUrl);
                 }
-                waitingUrls.Enqueue(newUrl);
             }
         }
 

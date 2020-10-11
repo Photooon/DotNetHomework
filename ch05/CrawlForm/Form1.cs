@@ -30,6 +30,7 @@ namespace CrawlForm
         private void startBtn_Click(object sender, EventArgs e)
         {
             crawler.InitUrl = initUrlTextBox.Text;
+            crawler.MaxNum = Convert.ToInt32(maxNumTextBox.Text);
 
             Thread thread = new Thread(new ThreadStart(crawler.Start));
             thread.Start();

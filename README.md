@@ -1,5 +1,7 @@
 # .net程序设计课程随堂作业集
 
+
+
 ## Homework1
 
 （一）
@@ -54,7 +56,7 @@
 
 
 
-## Homwork3
+## Homework3
 
 1、写一个订单管理的控制台程序，能够实现添加订单、删除订单、修改订单、查询订单（按照订单号、商品名称、客户、订单金额等进行查询）功能。
 
@@ -103,3 +105,21 @@
 （3）注意窗口的布局，在窗口尺寸变化时，不出现错位挤压等情况。
 
 （4）尽量通过**数据绑定**来实现功能。订单和订单明细各使用一个bindingsource，通过DataMember来实现主从对象绑定。
+
+
+
+## Homework5
+
+1、改进书上例子9-10的爬虫程序。
+
+（1）只爬取起始网站（www.cnblog.com)上的网页 
+
+（2）只有当爬取的是html，htm，jsp，aspx、php页面时，才解析并爬取下一级URL。
+
+（3）相对地址转成绝对地址进行爬取。
+
+​	例如：当前页面是https://www.cnblogs.com/abc/时, 该页面中的链接 test/index.html 或者 ./test/index.html都相当于 https://www.cnblogs.com/abc/test/index.html ， ../zzz/index.html相当于 https://www.cnblogs.com/zzz/index.html 
+
+2、尝试使用Winform来设置初始URL，启动爬虫，显示已经爬取的URL和错误的URL信息。
+
+3、将爬虫程序，使用并行处理进行优化，实现更快速的网页爬取。

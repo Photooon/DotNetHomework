@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "02204d13-90de-47f7-803c-f4d1bfba0b8f",
+		"name": "DotNetHw6",
+		"description": "作业6 WebApi测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddCommodity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CommodityId\": 1,\r\n    \"Name\": \"iPad\",\r\n    \"Price\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/commodity",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"commodity"
+					]
+				},
+				"description": "按Id查询订单"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"2"
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "AddCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerId\": 2,\r\n    \"Name\": \"UnderWood\",\r\n    \"Age\": 60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/customer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"customer"
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "AddOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 2,\r\n    \"customerId\": 1,\r\n    \"orderDetails\":\r\n    [\r\n        {\r\n            \"OrderDetailId\": 3,\r\n            \"CommodityId\": 1,\r\n            \"Count\": 2,\r\n            \"Discount\": 0.9\r\n        },\r\n        {\r\n            \"OrderDetailId\": 4,\r\n            \"CommodityId\": 1,\r\n            \"Count\": 3,\r\n            \"Discount\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/order",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"order"
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOrder",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"1"
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithCommodityName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/order/commodityquery?name=iPad",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"order",
+						"commodityquery"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "iPad"
+						}
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithCustomerName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/order/customerquery?name=James",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"order",
+						"customerquery"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "James"
+						}
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWithMoney",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/order/moneyquery?lower=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"order",
+						"moneyquery"
+					],
+					"query": [
+						{
+							"key": "lower",
+							"value": "1"
+						}
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrder",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 2,\r\n    \"customerId\": 2,\r\n    \"orderDetails\":\r\n    [\r\n        {\r\n            \"OrderDetailId\": 5,\r\n            \"CommodityId\": 1,\r\n            \"Count\": 100,\r\n            \"Discount\": 0.9\r\n        },\r\n        {\r\n            \"OrderDetailId\": 1,\r\n            \"CommodityId\": 1,\r\n            \"Count\": 3,\r\n            \"Discount\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/orderapp/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"orderapp",
+						"2"
+					]
+				},
+				"description": "添加一种货物"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
